@@ -1,0 +1,37 @@
+<!-- DTD for Data::DumpXML -->
+
+<!ENTITY % listtype "undef | str | ref | alias">
+
+<!ELEMENT data (%listtype;)*>
+<!ELEMENT undef EMPTY>
+<!ELEMENT str (#PCDATA)>
+<!ELEMENT ref (%listtype; | array | hash | glob | code)>
+<!ELEMENT alias EMPTY>
+<!ELEMENT array (%listtype;)*>
+<!ELEMENT hash  (key, (%listtype;))*>
+<!ELEMENT key (#PCDATA)>
+<!ELEMENT glob EMPTY>
+<!ELEMENT code EMPTY>
+
+<!ENTITY % stdattlist '
+   id ID #IMPLIED
+   class CDATA #IMPLIED
+'>
+
+<!ENTITY % encoding '
+    encoding (plain|base64) "plain"
+'>
+
+<!ATTLIST undef %stdattlist;>
+<!ATTLIST ref %stdattlist;>
+<!ATTLIST undef %stdattlist;>
+<!ATTLIST array %stdattlist;>
+<!ATTLIST hash %stdattlist;>
+<!ATTLIST glob %stdattlist;>
+<!ATTLIST code %stdattlist;>
+
+<!ATTLIST str %stdattlist;
+              %encoding;>
+<!ATTLIST key %encoding;>
+
+<!ATTLIST alias ref IDREF #IMPLIED>

@@ -1,0 +1,10 @@
+Changes
+DumpXML.pm
+DumpXML/Parser.pm
+MANIFEST
+Makefile.PL
+README
+TODO
+dumpxml.dtd
+t/basic.t
+t/dump-restore.t
