@@ -7,7 +7,7 @@ require Exporter;
 *import = \&Exporter::import;
 @EXPORT_OK=qw(dump_xml dump);
 
-$VERSION = "1.00";  # $Date: 2000/01/13 23:53:25 $
+$VERSION = "1.01";  # $Date: 2000/09/19 09:58:26 $
 
 use vars qw($INDENT);  # configuration
 $INDENT = " " unless defined $INDENT;

@@ -10,7 +10,6 @@ print "not " unless $xml =~ m,<data><str>33</str></data>,;
 print "ok 1\n";
 
 $xml = remove_space(dump_xml(\33));
-print "$xml\n";
 print "not " unless $xml =~ m,<data><ref><str>33</str></ref></data>,;
 print "ok 2\n";
 
