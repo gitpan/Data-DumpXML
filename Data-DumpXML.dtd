@@ -1,4 +1,4 @@
-<!-- DTD for Data::DumpXML $Date: 2000/01/13 23:55:44 $ -->
+<!-- DTD for Data::DumpXML $Date: 2001/12/11 19:49:54 $ -->
 
 <!ENTITY % scalar "undef | str | ref | alias">
 

@@ -1,3 +1,15 @@
+2001-12-11  Gisle Aas <gisle@ActiveState.com>
+
+   Release 1.02
+
+   Added namespace support based on a patch by Jonathan Stowe.
+
+   Added an XML Schema document that describes the dump format.
+
+   Escape ']]>' when it occurs strings.
+
+
+
 2000-09-19  Gisle Aas <gisle@ActiveState.com>
 
    Release 1.01
