@@ -1,4 +1,4 @@
-<!-- DTD for Data::DumpXML $Date: 2001/12/11 19:49:54 $ -->
+<!-- DTD for Data::DumpXML $Date: 2002/12/28 00:56:09 $ -->
 
 <!ENTITY % scalar "undef | str | ref | alias">
 
@@ -19,7 +19,6 @@
 
 <!ATTLIST undef %stdattlist;>
 <!ATTLIST ref   %stdattlist;>
-<!ATTLIST undef %stdattlist;>
 <!ATTLIST array %stdattlist;>
 <!ATTLIST hash  %stdattlist;>
 <!ATTLIST glob  %stdattlist;>

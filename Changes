@@ -1,3 +1,11 @@
+2002-12-27  Gisle Aas <gisle@ActiveState.com>
+
+   Release 1.04
+
+   Fixed duplicte ATTLIST definition of undef in the DTD.
+
+
+
 2001-12-30  Gisle Aas <gisle@ActiveState.com>
 
    Release 1.03
@@ -13,7 +21,7 @@
 
    Documentation improved a bit.
 
-   Data::DumpXML::Parser will not turn on the 'Namespaces'
+   Data::DumpXML::Parser will now turn on the 'Namespaces'
    option automatically.
 
    Data-DumpXML.xsd fixes:
