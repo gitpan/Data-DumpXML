@@ -7,7 +7,7 @@ require Exporter;
 *import = \&Exporter::import;
 @EXPORT_OK=qw(dump_xml dump);
 
-$VERSION = "0.02";  # $Date: 2000/01/13 22:50:15 $
+$VERSION = "1.00";  # $Date: 2000/01/13 23:53:25 $
 
 use vars qw($INDENT);  # configuration
 $INDENT = " " unless defined $INDENT;
@@ -62,7 +62,7 @@ sub _dump
     $class = $class ? " class=" . quote($class) : "";
     $id = "\1";  # magic that is removed or expanded to ' id="r1"' in the end.
 
-    if ($type eq "SCALAR") {
+    if ($type eq "SCALAR" || $type eq "REF") {
 	return "<undef$class$id/>"
 	    unless defined $$rval;
 	return "<ref$class$id>" . format_list(_dump($$rval, 1)) . "</ref>"
@@ -162,15 +162,15 @@ The string returned is an XML document that represents any perl data
 structure passed in.  The following DTD is used:
 
   <!DOCTYPE data [
-   <!ENTITY % listtype "undef | str | ref | alias">
+   <!ENTITY % scalar "undef | str | ref | alias">
 
-   <!ELEMENT data (%listtype;)*>
+   <!ELEMENT data (%scalar;)*>
    <!ELEMENT undef EMPTY>
    <!ELEMENT str (#PCDATA)>
-   <!ELEMENT ref (%listtype; | array | hash | glob | code)>
+   <!ELEMENT ref (%scalar; | array | hash | glob | code)>
    <!ELEMENT alias EMPTY>
-   <!ELEMENT array (%listtype;)*>
-   <!ELEMENT hash  (key, (%listtype;))*>
+   <!ELEMENT array (%scalar;)*>
+   <!ELEMENT hash  (key, (%scalar;))*>
    <!ELEMENT key (#PCDATA)>
    <!ELEMENT glob EMPTY>
    <!ELEMENT code EMPTY>
